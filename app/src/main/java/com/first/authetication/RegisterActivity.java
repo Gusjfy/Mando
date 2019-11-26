@@ -90,8 +90,10 @@ public class RegisterActivity extends AppCompatActivity {
         usuario.setCpf(cpf.getText().toString());
 
         new DatabaseHelper().addUser(user.getUid() ,usuario, new DatabaseHelper.DataStatus() {
+
+
             @Override
-            public void DataIsLoaded(List<Travel> travels, List<String> keys) {
+            public void DataIsLoaded(List<Travel> travels, List<User> users, List<String> keys) {
 
             }
 

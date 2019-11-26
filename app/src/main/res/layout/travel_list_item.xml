@@ -12,7 +12,7 @@
         android:id="@+id/Origem"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="100dp"
+        android:layout_marginStart="76dp"
         android:layout_marginTop="8dp"
         android:text="TextView"
         android:textSize="20dp"
@@ -23,7 +23,7 @@
         android:id="@+id/Destino"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="100dp"
+        android:layout_marginStart="84dp"
         android:layout_marginTop="5dp"
         android:layout_marginBottom="8dp"
         android:text="TextView"
@@ -31,6 +31,18 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Origem"
         app:layout_constraintVertical_bias="0.406" />
+
+    <TextView
+        android:id="@+id/username"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="176dp"
+        android:layout_marginBottom="8dp"
+        android:text="TextView"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.389" />
 
     <TextView
         android:id="@+id/horario"
@@ -68,10 +80,22 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.662" />
 
+    <TextView
+        android:id="@+id/textview500"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Destino:"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.036"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.662" />
+
     <Button
         android:id="@+id/button3"
-        android:layout_width="159dp"
-        android:layout_height="38dp"
+        android:layout_width="140dp"
+        android:layout_height="43dp"
         android:layout_marginTop="4dp"
         android:layout_marginEnd="4dp"
         android:layout_marginBottom="8dp"
@@ -79,6 +103,19 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/horario" />
+
+    <Button
+        android:id="@+id/chat"
+        android:layout_width="76dp"
+        android:layout_height="37dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="168dp"
+        android:layout_marginBottom="8dp"
+        android:text="CHAT"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/horario"
+        app:layout_constraintVertical_bias="1.0" />
 
     <TextView
         android:id="@+id/textView7"

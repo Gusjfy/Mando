@@ -19,6 +19,7 @@ public class DatabaseHelper {
     private DatabaseReference mReferenceTravels;
     private DatabaseReference mReferenceUsers;
     private List<Travel> travels = new ArrayList<>();
+    private List<User> users = new ArrayList<>();
 
     public DatabaseHelper() {
         mDatabase = FirebaseDatabase.getInstance();
@@ -27,7 +28,7 @@ public class DatabaseHelper {
     }
 
     public interface DataStatus{
-        void DataIsLoaded(List<Travel> travels, List<String> keys);
+        void DataIsLoaded(List<Travel> travels,List<User> users, List<String> keys);
         void DataIsInserted();
         void DataIsUpdated();
         void DataIsDeleted();
@@ -45,7 +46,26 @@ public class DatabaseHelper {
                     travels.add(travel);
 
                 }
-                dataStatus.DataIsLoaded(travels, keys);
+                listOfUsers(dataStatus, travels, keys);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+    }
+
+    public void listOfUsers(final DataStatus dataStatus, final List<Travel> travels, final List<String> keys){
+        mReferenceUsers.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                users.clear();
+                for (DataSnapshot keyNode: dataSnapshot.getChildren()) {
+                    User user = keyNode.getValue(User.class);
+                    users.add(user);
+                }
+                dataStatus.DataIsLoaded(travels, users, keys);
             }
 
             @Override

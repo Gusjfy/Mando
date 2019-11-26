@@ -18,6 +18,7 @@ import com.first.authetication.R;
 import com.first.authetication.TravelRegister;
 import com.first.authetication.model.RecyclerView_Config;
 import com.first.authetication.model.Travel;
+import com.first.authetication.model.User;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.List;
@@ -48,8 +49,8 @@ public class HomeFragment extends Fragment {
 
         new DatabaseHelper().listOfTravels(new DatabaseHelper.DataStatus() {
             @Override
-            public void DataIsLoaded(List<Travel> travels, List<String> keys) {
-                new RecyclerView_Config().setConfig(mRecyclerView, getActivity().getApplicationContext(), travels, keys);
+            public void DataIsLoaded(List<Travel> travels, List<User> users, List<String> keys) {
+                new RecyclerView_Config().setConfig(mRecyclerView, getActivity().getApplicationContext(), travels, users, keys);
             }
 
             @Override

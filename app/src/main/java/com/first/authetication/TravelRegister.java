@@ -11,6 +11,7 @@ import android.widget.Toast;
 
 import com.first.authetication.DataBaseManager.DatabaseHelper;
 import com.first.authetication.model.Travel;
+import com.first.authetication.model.User;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
@@ -49,8 +50,10 @@ public class TravelRegister extends AppCompatActivity {
                 t.setData(data.getText().toString());
                 t.setId_entregador(firebaseUser.getUid());
                 new DatabaseHelper().addTravel(t, new DatabaseHelper.DataStatus() {
+
+
                     @Override
-                    public void DataIsLoaded(List<Travel> travels, List<String> keys) {
+                    public void DataIsLoaded(List<Travel> travels, List<User> users, List<String> keys) {
 
                     }
 
