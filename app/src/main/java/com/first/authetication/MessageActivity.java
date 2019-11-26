@@ -34,6 +34,7 @@ public class MessageActivity extends AppCompatActivity {
         setContentView(R.layout.activity_message);
 
         Toolbar toolbar = findViewById(R.id.toolbar);
+
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle("");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -44,7 +45,6 @@ public class MessageActivity extends AppCompatActivity {
                 finish();
             }
         });
-
         username = findViewById(R.id.username);
         //Return the intent that started this activity.
         intent = getIntent();

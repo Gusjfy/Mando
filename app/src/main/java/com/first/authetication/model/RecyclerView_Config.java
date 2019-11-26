@@ -1,10 +1,7 @@
 package com.first.authetication.model;
 
-import android.app.Activity;
-import android.app.Application;
 import android.content.Context;
 import android.content.Intent;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,15 +14,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.first.authetication.MessageActivity;
 import com.first.authetication.R;
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
 
-import java.util.EventListener;
 import java.util.List;
 
 public class RecyclerView_Config {
@@ -52,9 +41,9 @@ public class RecyclerView_Config {
         public TravelItemView(ViewGroup parent) {
             super(LayoutInflater.from(mContext).inflate(R.layout.travel_list_item, parent, false));
 
-            mOrigem = (TextView) itemView.findViewById(R.id.Origem);
-            mDestino = (TextView) itemView.findViewById(R.id.Destino);
-            mHorario = (TextView) itemView.findViewById(R.id.horario);
+            mOrigem = itemView.findViewById(R.id.Origem);
+            mDestino = itemView.findViewById(R.id.Destino);
+            mHorario = itemView.findViewById(R.id.horario);
             mUsername = itemView.findViewById(R.id.username);
             chat = itemView.findViewById(R.id.chat);
         }

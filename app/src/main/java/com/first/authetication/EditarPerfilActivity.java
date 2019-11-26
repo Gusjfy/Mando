@@ -4,6 +4,8 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 
 import com.first.authetication.model.User;
@@ -18,11 +20,12 @@ import com.google.firebase.database.ValueEventListener;
 public class EditarPerfilActivity extends AppCompatActivity {
 
     EditText edtNome, edtBio, edtFone;
+    Button btnSalvar;
 
     FirebaseUser firebaseUser;
 
     DatabaseReference reference;
-
+    User user;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -32,9 +35,7 @@ public class EditarPerfilActivity extends AppCompatActivity {
         edtNome = findViewById(R.id.editTextNome);
         edtBio = findViewById(R.id.editTextBio);
         edtFone = findViewById(R.id.editTextFone);
-
-
-        edtNome.setText("teste");
+        btnSalvar = findViewById(R.id.btnSalvarPerfil);
 
 
 
@@ -43,7 +44,7 @@ public class EditarPerfilActivity extends AppCompatActivity {
         reference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                User user = dataSnapshot.getValue(User.class);
+                user = dataSnapshot.getValue(User.class);
                 edtNome.setText(user.getNome());
                 edtBio.setText(user.getBio());
                 edtFone.setText(user.getTelefone());
@@ -53,9 +54,19 @@ public class EditarPerfilActivity extends AppCompatActivity {
             public void onCancelled(@NonNull DatabaseError databaseError) {
 
             }
+
         });
 
-
+    btnSalvar.setOnClickListener(new View.OnClickListener() {
+        @Override
+        public void onClick(View view) {
+            user.setNome(edtNome.getText().toString());
+            user.setTelefone(edtFone.getText().toString());
+            user.setBio(edtBio.getText().toString());
+            reference.setValue(user);
+            finish();
+        }
+    });
 
 
 

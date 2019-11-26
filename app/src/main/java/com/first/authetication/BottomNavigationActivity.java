@@ -2,6 +2,7 @@ package com.first.authetication;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -29,6 +30,8 @@ public class BottomNavigationActivity extends AppCompatActivity {
 
     RecyclerView mRecyclerView;
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,6 +44,8 @@ public class BottomNavigationActivity extends AppCompatActivity {
 
         mRecyclerView = findViewById(R.id.recyclerview_travels);
 
+        Toolbar actionBarToolBar = findViewById(R.id.myToolBbar);
+        setSupportActionBar(actionBarToolBar);
 
 
     }
@@ -80,29 +85,4 @@ public class BottomNavigationActivity extends AppCompatActivity {
         }
     };
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu, menu);
-
-        return super.onCreateOptionsMenu(menu);
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-
-        switch (item.getItemId()){
-            case R.id.logout:
-                FirebaseAuth.getInstance().signOut();
-                startActivity(new Intent(BottomNavigationActivity.this, MainActivity.class));
-                finish();
-                return true;
-            case R.id.EditarPerfil:
-                startActivity(new Intent(BottomNavigationActivity.this, EditarPerfilActivity.class));
-                return true;
-
-
-        }
-
-        return false;
-    }
 }
