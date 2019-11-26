@@ -49,11 +49,7 @@ public class MessageActivity extends AppCompatActivity {
         //Return the intent that started this activity.
         intent = getIntent();
 
-        //No código onde vai estar o usuário e irá chamar essa activity, colocar esse código
-        // mContext = getContext();
-        //Intent intent = new Intent(mContext, MessageActivity.class);
-        //intent.putExtra("userid", user.getId());
-        //mContext.startActivity(intent);
+
         String userId = intent.getStringExtra("userid");
         fuser = FirebaseAuth.getInstance().getCurrentUser();
         reference = FirebaseDatabase.getInstance().getReference("users").child(userId);

@@ -1,15 +1,21 @@
 package com.first.authetication.model;
 
+import android.app.Activity;
+import android.app.Application;
 import android.content.Context;
+import android.content.Intent;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.first.authetication.MessageActivity;
 import com.first.authetication.R;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -40,7 +46,7 @@ public class RecyclerView_Config {
         private TextView mDestino;
         private TextView mHorario;
         private TextView mUsername;
-
+        private Button chat;
         private String key;
 
         public TravelItemView(ViewGroup parent) {
@@ -50,14 +56,26 @@ public class RecyclerView_Config {
             mDestino = (TextView) itemView.findViewById(R.id.Destino);
             mHorario = (TextView) itemView.findViewById(R.id.horario);
             mUsername = itemView.findViewById(R.id.username);
+            chat = itemView.findViewById(R.id.chat);
         }
 
-        public void bind(Travel t , String key, User user){
+        public void bind(final Travel t , String key, final User user){
             mOrigem.setText(t.getOrigem());
             mDestino.setText(t.getDestino());
             mHorario.setText(t.getHora());
             mUsername.setText(user.getNome());
             this.key = key;
+
+            chat.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+
+                    Intent intent = new Intent(mContext, MessageActivity.class);
+                    intent.putExtra("userid", t.getId_entregador());
+                    mContext.startActivity(intent);
+                }
+
+            });
         }
 
     }
@@ -66,6 +84,7 @@ public class RecyclerView_Config {
         private List<Travel> mTravelList;
         private List<String> mKey;
         private List<User> mUsers;
+
 
         public TravelAdapter(List<Travel> mTravelList, List<User> mUsers, List<String> mKey) {
             this.mTravelList = mTravelList;

@@ -15,15 +15,14 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/colorPrimaryDark"
-            android:theme="@style/TextAppearance.AppCompat.Widget.ActionBar.Menu"
-            app:popupTheme="@style/TextAppearance.AppCompat.Widget.ActionBar.Menu">
+            android:theme="@style/AppTheme">
 
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/username"
-                android:textSize="10sp"
+                android:textSize="18sp"
                 android:layout_marginLeft="25dp"
                 android:textColor="#fff"
                 android:textStyle="bold"
