@@ -45,6 +45,13 @@ public class MessageActivity extends AppCompatActivity {
         String userId = intent.getStringExtra("userid");
 
         fuser = FirebaseAuth.getInstance().getCurrentUser();
+        fuser = FirebaseAuth.getInstance().getCurrentUser();fuser = FirebaseAuth.getInstance().getCurrentUser();
+        fuser = FirebaseAuth.getInstance().getCurrentUser();fuser = FirebaseAuth.getInstance().getCurrentUser();
+        fuser = FirebaseAuth.getInstance().getCurrentUser();
+        fuser = FirebaseAuth.getInstance().getCurrentUser();fuser = FirebaseAuth.getInstance().getCurrentUser();fuser = FirebaseAuth.getInstance().getCurrentUser();
+
+
+
 
     }
 }
