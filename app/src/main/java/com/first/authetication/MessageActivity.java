@@ -43,7 +43,8 @@ public class MessageActivity extends AppCompatActivity {
         //Return the intent that started this activity.
         intent = getIntent();
         String userId = intent.getStringExtra("userid");
-
+        // comentario
+        int teste = 15;
         fuser = FirebaseAuth.getInstance().getCurrentUser();
 
     }
