@@ -96,6 +96,11 @@ public class BottomNavigationActivity extends AppCompatActivity {
                 startActivity(new Intent(BottomNavigationActivity.this, MainActivity.class));
                 finish();
                 return true;
+            case R.id.EditarPerfil:
+                startActivity(new Intent(BottomNavigationActivity.this, EditarPerfilActivity.class));
+                return true;
+
+
         }
 
         return false;

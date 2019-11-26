@@ -1,17 +1,11 @@
-package com.first.authetication.UI;
-
-import android.os.Bundle;
-import android.util.Log;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.TextView;
+package com.first.authetication;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.fragment.app.Fragment;
+import androidx.appcompat.app.AppCompatActivity;
 
-import com.first.authetication.R;
+import android.os.Bundle;
+import android.widget.EditText;
+
 import com.first.authetication.model.User;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -21,25 +15,27 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+public class EditarPerfilActivity extends AppCompatActivity {
 
-public class PerfilFragment extends Fragment {
-
-    private TextView username;
-    private TextView userLocation;
-    private TextView txtBio;
+    EditText edtNome, edtBio, edtFone;
 
     FirebaseUser firebaseUser;
+
     DatabaseReference reference;
 
-    @Nullable
     @Override
-    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) {
 
-        View view = inflater.inflate(R.layout.fragment_perfil, container, false);
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_editar_perfil);
 
-        username = view.findViewById(R.id.usernameee);
-        userLocation = view.findViewById(R.id.userlocation);
-        txtBio = view.findViewById(R.id.txtBio);
+        edtNome = findViewById(R.id.editTextNome);
+        edtBio = findViewById(R.id.editTextBio);
+        edtFone = findViewById(R.id.editTextFone);
+
+
+        edtNome.setText("teste");
+
 
 
         firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
@@ -48,8 +44,9 @@ public class PerfilFragment extends Fragment {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 User user = dataSnapshot.getValue(User.class);
-                username.setText(user.getNome());
-                txtBio.setText(user.getBio());
+                edtNome.setText(user.getNome());
+                edtBio.setText(user.getBio());
+                edtFone.setText(user.getTelefone());
             }
 
             @Override
@@ -59,8 +56,15 @@ public class PerfilFragment extends Fragment {
         });
 
 
-        return view;
+
+
+
+
+
+
+
+
+
 
     }
-
 }

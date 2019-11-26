@@ -9,10 +9,7 @@
 
     <item
         android:id="@+id/EditarPerfil"
-        android:title="EditarPerfil"
+        android:title="Editar perfil"
         app:showAsAction="never"/>
-
-
-
 
 </menu>

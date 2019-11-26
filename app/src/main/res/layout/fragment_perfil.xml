@@ -64,6 +64,7 @@
 
 
                         <TextView
+                            android:id="@+id/txtBio"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Euismod quis viverra nibh cras pulvinar. Augue interdum velit euismod in pellentesque massa placerat duis ultricies. "

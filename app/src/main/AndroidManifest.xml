@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MessageActivity"></activity>
+        <activity android:name=".EditarPerfilActivity"></activity>
+        <activity android:name=".MessageActivity" />
         <activity android:name=".RegisterActivity" />
         <activity android:name=".TravelRegister" />
         <activity android:name=".BottomNavigationActivity" />

@@ -8,6 +8,15 @@ public class User {
     private String cpf;
     private String telefone;
     private int avaliacao = 3;
+    private String bio;
+
+    public String getBio() {
+        return bio;
+    }
+
+    public void setBio(String bio) {
+        this.bio = bio;
+    }
 
     public User() {
     }
