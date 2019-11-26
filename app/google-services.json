@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "992020605497",
+    "firebase_url": "https://mando-1f589.firebaseio.com",
+    "project_id": "mando-1f589",
+    "storage_bucket": "mando-1f589.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:992020605497:android:342257cc4580b3eea1fbe8",
+        "android_client_info": {
+          "package_name": "com.first.authetication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "992020605497-7oc9jt839hbiv22k7hgsr5mnhgfn1f1s.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.first.authetication",
+            "certificate_hash": "ca215dff4af1db73f2afbfa4aa14be9766e03561"
+          }
+        },
+        {
+          "client_id": "992020605497-v0lf63sbl0qncnur6vhnkseebjbcmh2g.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAA7xAmJowfhCqQWM_cFQbEnZBV4VQbccI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "992020605497-v0lf63sbl0qncnur6vhnkseebjbcmh2g.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
