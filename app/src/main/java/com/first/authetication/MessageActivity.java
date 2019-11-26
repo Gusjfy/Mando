@@ -46,6 +46,13 @@ public class MessageActivity extends AppCompatActivity {
         // comentario
         int teste = 15;
         fuser = FirebaseAuth.getInstance().getCurrentUser();
+        fuser = FirebaseAuth.getInstance().getCurrentUser();fuser = FirebaseAuth.getInstance().getCurrentUser();
+        fuser = FirebaseAuth.getInstance().getCurrentUser();fuser = FirebaseAuth.getInstance().getCurrentUser();
+        fuser = FirebaseAuth.getInstance().getCurrentUser();
+        fuser = FirebaseAuth.getInstance().getCurrentUser();fuser = FirebaseAuth.getInstance().getCurrentUser();fuser = FirebaseAuth.getInstance().getCurrentUser();
+
+
+
 
     }
 }

@@ -7,6 +7,10 @@
         android:title="Logout"
         app:showAsAction="never"/>
 
+    <item
+        android:id="@+id/EditarPerfil"
+        android:title="EditarPerfil"
+        app:showAsAction="never"/>
 
 
 
