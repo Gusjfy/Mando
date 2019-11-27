@@ -35,8 +35,6 @@ public class RecyclerView_Config {
         private TextView mOrigem;
         private TextView mDestino;
         private TextView mHorario;
-        private TextView mUsername;
-        private Button chat;
         private String key;
 
         public TravelItemView(ViewGroup parent) {
@@ -45,27 +43,14 @@ public class RecyclerView_Config {
             mOrigem = itemView.findViewById(R.id.Origem);
             mDestino = itemView.findViewById(R.id.Destino);
             mHorario = itemView.findViewById(R.id.horario);
-            mUsername = itemView.findViewById(R.id.username);
-            chat = itemView.findViewById(R.id.chat);
+
         }
 
         public void bind(final Travel t , String key, final User user){
             mOrigem.setText(t.getOrigem());
             mDestino.setText(t.getDestino());
             mHorario.setText(t.getHora());
-            mUsername.setText(user.getNome());
             this.key = key;
-
-            chat.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-
-                    Intent intent = new Intent(mContext, MessageActivity.class);
-                    intent.putExtra("userid", t.getId_entregador());
-                    mContext.startActivity(intent);
-                }
-
-            });
         }
 
     }
@@ -90,12 +75,20 @@ public class RecyclerView_Config {
         }
 
         @Override
-        public void onBindViewHolder(@NonNull TravelItemView holder, int position) {
-//            for (User u: mUsers){
-//                Log.d("tag", u.getNome());
-//            }
-
+        public void onBindViewHolder(@NonNull TravelItemView holder, final int position) {
            holder.bind(mTravelList.get(position), mKey.get(position), mUsers.get(position));
+
+           holder.itemView.setOnClickListener(new View.OnClickListener(){
+
+               @Override
+               public void onClick(View v) {
+                   //Aqui tu cria a activity que tu quer
+//                   Intent intent = new Intent(mContext, A activity que tu criou.class);
+//                   intent.putExtra("travelid", mKey.get(position));
+//                   mContext.startActivity(intent);
+               }
+
+           });
         }
 
         @Override

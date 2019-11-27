@@ -1,5 +1,7 @@
 package com.first.authetication.DataBaseManager;
 
+import android.util.Log;
+
 import androidx.annotation.NonNull;
 
 import com.first.authetication.model.Travel;
