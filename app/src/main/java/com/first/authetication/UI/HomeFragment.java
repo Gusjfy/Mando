@@ -49,8 +49,8 @@ public class HomeFragment extends Fragment {
 
         new DatabaseHelper().listOfTravels(new DatabaseHelper.DataStatus() {
             @Override
-            public void DataIsLoaded(List<Travel> travels, List<User> users, List<String> keys) {
-                new RecyclerView_Config().setConfig(mRecyclerView, getActivity(), travels, users, keys);
+            public void DataIsLoaded(List<Travel> travels, List<String> keys) {
+                new RecyclerView_Config().setConfig(mRecyclerView, getActivity(), travels, keys);
             }
 
             @Override

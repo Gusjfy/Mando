@@ -93,7 +93,7 @@ public class RegisterActivity extends AppCompatActivity {
 
 
             @Override
-            public void DataIsLoaded(List<Travel> travels, List<User> users, List<String> keys) {
+            public void DataIsLoaded(List<Travel> travels, List<String> keys) {
 
             }
 

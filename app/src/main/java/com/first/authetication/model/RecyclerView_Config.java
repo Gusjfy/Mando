@@ -21,9 +21,9 @@ import java.util.List;
 public class RecyclerView_Config {
     private Context mContext;
     private TravelAdapter mTravelsAdapter;
-    public void setConfig(RecyclerView recyclerView, Context context, List<Travel> travels, List<User> users , List<String> keys){
+    public void setConfig(RecyclerView recyclerView, Context context, List<Travel> travels, List<String> keys){
         mContext = context;
-        mTravelsAdapter = new TravelAdapter(travels, users, keys);
+        mTravelsAdapter = new TravelAdapter(travels, keys);
         recyclerView.setLayoutManager(new LinearLayoutManager(context));
         recyclerView.setAdapter(mTravelsAdapter);
 
@@ -46,7 +46,7 @@ public class RecyclerView_Config {
 
         }
 
-        public void bind(final Travel t , String key, final User user){
+        public void bind(final Travel t , String key){
             mOrigem.setText(t.getOrigem());
             mDestino.setText(t.getDestino());
             mHorario.setText(t.getHora());
@@ -61,9 +61,8 @@ public class RecyclerView_Config {
         private List<User> mUsers;
 
 
-        public TravelAdapter(List<Travel> mTravelList, List<User> mUsers, List<String> mKey) {
+        public TravelAdapter(List<Travel> mTravelList, List<String> mKey) {
             this.mTravelList = mTravelList;
-            this.mUsers = mUsers;
             this.mKey = mKey;
         }
 
@@ -76,7 +75,7 @@ public class RecyclerView_Config {
 
         @Override
         public void onBindViewHolder(@NonNull TravelItemView holder, final int position) {
-           holder.bind(mTravelList.get(position), mKey.get(position), mUsers.get(position));
+           holder.bind(mTravelList.get(position), mKey.get(position));
 
            holder.itemView.setOnClickListener(new View.OnClickListener(){
 
