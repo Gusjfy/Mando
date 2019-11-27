@@ -2,6 +2,7 @@ package com.first.authetication.model;
 
 import android.content.Context;
 import android.content.Intent;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -90,7 +91,11 @@ public class RecyclerView_Config {
 
         @Override
         public void onBindViewHolder(@NonNull TravelItemView holder, int position) {
-            holder.bind(mTravelList.get(position), mKey.get(position), mUsers.get(position));
+//            for (User u: mUsers){
+//                Log.d("tag", u.getNome());
+//            }
+
+           holder.bind(mTravelList.get(position), mKey.get(position), mUsers.get(position));
         }
 
         @Override
