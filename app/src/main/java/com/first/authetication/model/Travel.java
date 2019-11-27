@@ -6,6 +6,25 @@ public class Travel {
     private String destino;
     private String data;
     private String hora;
+    private String valor;
+    private String descricao;
+
+    public String getValor() {
+        return valor;
+    }
+
+    public void setValor(String valor) {
+        this.valor = valor;
+    }
+
+    public String getDescricao() {
+        return descricao;
+    }
+
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
+    }
+
     private boolean visibility;
     private int id;
     private String id_entregador;
