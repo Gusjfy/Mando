@@ -15,6 +15,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.first.authetication.MessageActivity;
 import com.first.authetication.R;
+import com.first.authetication.TravelInfoActivity;
 
 import java.util.List;
 
@@ -82,9 +83,9 @@ public class RecyclerView_Config {
                @Override
                public void onClick(View v) {
                    //Aqui tu cria a activity que tu quer
-//                   Intent intent = new Intent(mContext, A activity que tu criou.class);
-//                   intent.putExtra("travelid", mKey.get(position));
-//                   mContext.startActivity(intent);
+                   Intent intent = new Intent(mContext, TravelInfoActivity.class);
+                   intent.putExtra("travelid", mKey.get(position));
+                   mContext.startActivity(intent);
                }
 
            });
