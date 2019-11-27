@@ -88,6 +88,7 @@ public class RegisterActivity extends AppCompatActivity {
         usuario.setSenha(password.getText().toString());
         usuario.setTelefone(tel.getText().toString());
         usuario.setCpf(cpf.getText().toString());
+        usuario.setId(user.getUid());
 
         new DatabaseHelper().addUser(user.getUid() ,usuario, new DatabaseHelper.DataStatus() {
 

@@ -4,11 +4,42 @@ public class User {
 
     private String nome;
     private String senha;
+
+    public String getSenha() {
+        return senha;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public String getCpf() {
+        return cpf;
+    }
+
     private String email;
     private String cpf;
     private String telefone;
-    private int avaliacao = 3;
+    private int avaliacao = 4;
     private String bio;
+    private String localidade;
+    private String id;
+
+    public String getLocalidade() {
+        return localidade;
+    }
+
+    public void setLocalidade(String localidade) {
+        this.localidade = localidade;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
 
     public String getBio() {
         return bio;
@@ -38,24 +69,12 @@ public class User {
         this.nome = nome;
     }
 
-    public String getSenha() {
-        return senha;
-    }
-
     public void setSenha(String senha) {
         this.senha = senha;
     }
 
-    public String getEmail() {
-        return email;
-    }
-
     public void setEmail(String email) {
         this.email = email;
-    }
-
-    public String getCpf() {
-        return cpf;
     }
 
     public void setCpf(String cpf) {

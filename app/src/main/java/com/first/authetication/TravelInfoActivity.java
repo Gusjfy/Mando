@@ -27,12 +27,11 @@ public class TravelInfoActivity extends AppCompatActivity {
     private Intent intent;
 
     private Button btnChat;
+    private Button btnPerfil;
 
     TextView txtNome, txtOrigem, txtDestino, txtValor, txtData, txtHora;
 
 
-    FirebaseUser firebaseUser;
-    //    DatabaseReference referenceUser;
     DatabaseReference reference;
     DatabaseReference referenceUser;
     Travel travel;
@@ -60,6 +59,17 @@ public class TravelInfoActivity extends AppCompatActivity {
         txtValor = findViewById(R.id.txtValor);
         txtData = findViewById(R.id.txtData);
         txtHora = findViewById(R.id.txtHora);
+
+        btnPerfil = findViewById(R.id.btnPerfil);
+
+        btnPerfil.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(mContext, PerfilEntregadorActivity.class);
+                intent.putExtra("userid", travel.getId_entregador());
+                mContext.startActivity(intent);
+            }
+        });
 
 
 
@@ -105,7 +115,6 @@ public class TravelInfoActivity extends AppCompatActivity {
         btnChat.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Log.d("vsf", travel.getId_entregador());
                 Intent intent = new Intent(mContext, MessageActivity.class);
                 intent.putExtra("userid", travel.getId_entregador());
                 mContext.startActivity(intent);

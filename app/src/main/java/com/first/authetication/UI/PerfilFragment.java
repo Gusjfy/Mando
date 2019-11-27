@@ -34,6 +34,9 @@ public class PerfilFragment extends Fragment {
     private TextView username;
     private TextView userLocation;
     private TextView txtBio;
+    private TextView txtRating;
+
+
 
     FirebaseUser firebaseUser;
     DatabaseReference reference;
@@ -49,6 +52,7 @@ public class PerfilFragment extends Fragment {
         username = view.findViewById(R.id.usernameee);
         userLocation = view.findViewById(R.id.userlocation);
         txtBio = view.findViewById(R.id.txtBio);
+        txtRating = view.findViewById(R.id.rating);
 
 
         firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
@@ -59,6 +63,8 @@ public class PerfilFragment extends Fragment {
                 User user = dataSnapshot.getValue(User.class);
                 username.setText(user.getNome());
                 txtBio.setText(user.getBio());
+                txtRating.setText(""+user.getAvaliacao());
+
             }
 
             @Override

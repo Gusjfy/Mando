@@ -1,9 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    tools:context=".PerfilEntregadorActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/bar_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary"
+            android:theme="@style/AppTheme">
+
+
+            <TextView
+                android:id="@+id/username"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="25dp"
+                android:layout_marginLeft="25dp"
+                android:textColor="#fff"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+
+        </androidx.appcompat.widget.Toolbar>
+
+    </com.google.android.material.appbar.AppBarLayout>
 
     <View
         android:layout_width="match_parent"
@@ -11,7 +40,9 @@
         android:layout_alignParentBottom="false"
         android:layout_marginBottom="393dp"
         android:background="@color/colorPrimary"
-        app:layout_constraintTop_toBottomOf="@+id/bar_layout"/>
+        app:layout_constraintTop_toBottomOf="@+id/bar_layout"
+        android:id="@+id/viewSeiLa"
+        />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -19,7 +50,8 @@
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:orientation="vertical"
-        app:layout_constraintTop_toBottomOf="@+id/bar_layout">
+        app:layout_constraintTop_toBottomOf="@+id/bar_layout"
+        >
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -152,4 +184,5 @@
     </LinearLayout>
 
 
-</RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
