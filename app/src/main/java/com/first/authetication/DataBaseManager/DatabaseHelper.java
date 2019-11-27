@@ -94,7 +94,12 @@ public class DatabaseHelper {
 
     private List<Integer> ordenaPorData(final List<Travel> travels){
 
-        List<Travel> data = travels;
+        List<Travel> data = new ArrayList<>();
+
+        for (int j = 0; j < travels.size(); j++){
+            data.add(travels.get(j));
+        }
+
         List<Integer> order = new ArrayList<>();
 
         Collections.sort(travels, new Comparator<Travel>() {
@@ -105,21 +110,28 @@ public class DatabaseHelper {
         });
 
         for (int i = 0; i < data.size(); i++) {
-            Log.d("Data" , data.get(i).getData());
+            Log.d("Chega" , data.get(i).getData());
         }
 
         for (int j = 0; j < travels.size(); j++) {
-            Log.d("Travels" , travels.get(j).getData());
+            Log.d("Bunda" , travels.get(j).getData());
         }
 
        for (int i = 0; i < data.size(); i++){
-           for (int j = 0; j < travels.size(); j++){
-               if (data.get(i).getId_entregador().equals(travels.get(j).getId_entregador())){
-                   order.add(j);
-                   break;
-               }
-           }
+            for (int j = 0; j < travels.size(); j++){
+                if (data.get(i).getId_entregador().equals(travels.get(j).getId_entregador())
+                        && data.get(i).getHora().equals(travels.get(j).getHora())
+                        && data.get(i).getDestino().equals(travels.get(j).getDestino())){
+                    order.add(j);
+                    break;
+                }
+
+            }
        }
+
+        for (int j = 0; j < order.size(); j++) {
+            Log.d("ordem" , order.get(j).toString());
+        }
 
        return order;
 

@@ -69,12 +69,6 @@ public class Travel implements Comparable<Travel> {
         this.origem = origem;
         this.destino = destino;
         this.data = data;
-        SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
-        try {
-            date = formato.parse(data);
-        } catch (ParseException e) {
-            e.printStackTrace();
-        }
         this.hora = hora;
         this.visibility = visibility;
     }
@@ -101,6 +95,12 @@ public class Travel implements Comparable<Travel> {
 
     public void setData(String data) {
         this.data = data;
+        try {
+            SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+            date = sdf.parse(data);
+        } catch (Exception e){
+            Log.d("Porra" , "Não vai essa merda - " + data );
+        }
     }
 
     public String getHora() {
