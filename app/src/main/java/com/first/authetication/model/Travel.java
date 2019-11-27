@@ -1,6 +1,6 @@
 package com.first.authetication.model;
 
-public class Travel {
+public class Travel implements Comparable<Travel> {
 
     private String origem;
     private String destino;
@@ -95,5 +95,10 @@ public class Travel {
 
     public void setVisibility(boolean visibility) {
         this.visibility = visibility;
+    }
+
+    @Override
+    public int compareTo(Travel o) {
+        return this.getData().compareTo(o.getHora());
     }
 }
