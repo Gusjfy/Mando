@@ -39,11 +39,13 @@ public class ChatFragment extends Fragment {
     DatabaseReference reference;
 
     private List<String> usersList;
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
-        View view  = inflater.inflate(R.layout.fragment_chat, container, false);;
+        View view = inflater.inflate(R.layout.fragment_chat, container, false);
+        ;
 
         recyclerView = view.findViewById(R.id.recycler_view);
         recyclerView.setHasFixedSize(true);
@@ -59,13 +61,13 @@ public class ChatFragment extends Fragment {
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 usersList.clear();
 
-                for (DataSnapshot snapshot : dataSnapshot.getChildren()){
+                for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
                     Chat chat = snapshot.getValue(Chat.class);
 
-                    if (chat.getSender().equals(fuser.getUid())){
+                    if (chat.getSender().equals(fuser.getUid())) {
                         usersList.add(chat.getReceiver());
                     }
-                    if (chat.getReceiver().equals(fuser.getUid())){
+                    if (chat.getReceiver().equals(fuser.getUid())) {
                         usersList.add(chat.getSender());
                     }
                 }
@@ -82,7 +84,7 @@ public class ChatFragment extends Fragment {
         return view;
     }
 
-    private  void readChats(){
+    private void readChats() {
         mUsers = new ArrayList<>();
 
         reference = FirebaseDatabase.getInstance().getReference("users");
@@ -92,14 +94,17 @@ public class ChatFragment extends Fragment {
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 mUsers.clear();
 
-                for (DataSnapshot snapshot : dataSnapshot.getChildren()){
+                for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
                     User user = snapshot.getValue(User.class);
 
-                    for (String id : usersList){
-                        if (user.getId().equals(id)){
-                            if (mUsers.size() != 0){
-                                for (User user1 : mUsers){
+                    for (String id : usersList) {
+                        if (user.getId().equals(id)) {
+                            if (mUsers.size() != 0) {
+                                for (User user1 : mUsers) {
                                     if (!user.getId().equals(user1.getId())){
+                                        if(mUsers.contains(user)){
+                                            break;
+                                        }
                                         mUsers.add(user);
                                     }
                                 }
