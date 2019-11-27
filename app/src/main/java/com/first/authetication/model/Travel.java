@@ -1,5 +1,11 @@
 package com.first.authetication.model;
 
+import android.util.Log;
+
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 public class Travel implements Comparable<Travel> {
 
     private String origem;
@@ -8,6 +14,7 @@ public class Travel implements Comparable<Travel> {
     private String hora;
     private String valor;
     private String descricao;
+    private Date date = new Date();
 
     public String getValor() {
         return valor;
@@ -53,6 +60,12 @@ public class Travel implements Comparable<Travel> {
         this.origem = origem;
         this.destino = destino;
         this.data = data;
+        SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
+        try {
+            date = formato.parse(data);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
         this.hora = hora;
         this.visibility = visibility;
     }
@@ -97,8 +110,12 @@ public class Travel implements Comparable<Travel> {
         this.visibility = visibility;
     }
 
+    public Date getDate() {
+        return date;
+    }
+
     @Override
     public int compareTo(Travel o) {
-        return this.getData().compareTo(o.getHora());
+        return this.getDate().compareTo(o.getDate());
     }
 }

@@ -15,9 +15,12 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.Date;
 import java.util.List;
 
 public class DatabaseHelper {
@@ -95,7 +98,7 @@ public class DatabaseHelper {
         Collections.sort(travels, new Comparator<Travel>() {
             @Override
             public int compare(Travel o1, Travel o2) {
-                return o1.getData().compareTo(o2.getData());
+                return o1.getDate().compareTo(o2.getDate());
             }
         });
 
