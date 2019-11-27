@@ -9,7 +9,6 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.first.authetication.MessageActivity;
 import com.first.authetication.R;
 import com.first.authetication.model.Chat;
 import com.google.firebase.auth.FirebaseAuth;
