@@ -61,7 +61,7 @@ public class DatabaseHelper {
 
                 }
 
-                dataStatus.DataIsLoaded(travels, ordernaKeys(keys, ordenaPorData(travels)));
+                dataStatus.DataIsLoaded(travels, ordenaPorData(travels));
             }
 
             @Override
@@ -92,15 +92,9 @@ public class DatabaseHelper {
         });
     }
 
-    private List<Integer> ordenaPorData(final List<Travel> travels){
+    private List<String> ordenaPorData(final List<Travel> travels){
 
-        List<Travel> data = new ArrayList<>();
-
-        for (int j = 0; j < travels.size(); j++){
-            data.add(travels.get(j));
-        }
-
-        List<Integer> order = new ArrayList<>();
+        List<String> newList = new ArrayList<>();
 
         Collections.sort(travels, new Comparator<Travel>() {
             @Override
@@ -109,48 +103,14 @@ public class DatabaseHelper {
             }
         });
 
-        for (int i = 0; i < data.size(); i++) {
-            Log.d("Chega" , data.get(i).getData());
+        for (int i = 0; i < travels.size(); i++){
+            newList.add(travels.get(i).getId());
         }
 
-        for (int j = 0; j < travels.size(); j++) {
-            Log.d("Bunda" , travels.get(j).getData());
-        }
-
-       for (int i = 0; i < data.size(); i++){
-            for (int j = 0; j < travels.size(); j++){
-                if (data.get(i).getId_entregador().equals(travels.get(j).getId_entregador())
-                        && data.get(i).getHora().equals(travels.get(j).getHora())
-                        && data.get(i).getDestino().equals(travels.get(j).getDestino())){
-                    order.add(j);
-                    break;
-                }
-
-            }
-       }
-
-        for (int j = 0; j < order.size(); j++) {
-            Log.d("ordem" , order.get(j).toString());
-        }
-
-       return order;
+       return newList;
 
     }
 
-    private List<String> ordernaKeys(List<String> keys, List<Integer> order){
 
-        List<String> newList = new ArrayList<>();
-
-        for (int i = 0; i < order.size(); i++){
-            for (int j = 0; j < keys.size(); j++){
-                if (j == order.get(i)){
-                    newList.add(keys.get(j));
-                    break;
-                }
-            }
-        }
-
-        return newList;
-    }
 
 }
