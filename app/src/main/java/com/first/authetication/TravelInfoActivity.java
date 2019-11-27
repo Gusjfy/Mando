@@ -27,7 +27,7 @@ public class TravelInfoActivity extends AppCompatActivity {
     private Button btnChat;
 
     FirebaseUser firebaseUser;
-//    DatabaseReference referenceUser;
+    //    DatabaseReference referenceUser;
     DatabaseReference reference;
     Travel travel;
 
@@ -63,13 +63,9 @@ public class TravelInfoActivity extends AppCompatActivity {
                 Log.d("vsf", travel.getId_entregador());
                 Intent intent = new Intent(mContext, MessageActivity.class);
                 intent.putExtra("userid", travel.getId_entregador());
-        mContext.startActivity(intent);
+                mContext.startActivity(intent);
             }
         });
-
-
-
-
 
 
     }
