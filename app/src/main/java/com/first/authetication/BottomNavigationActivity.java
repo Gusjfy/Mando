@@ -65,9 +65,9 @@ public class BottomNavigationActivity extends AppCompatActivity {
                 case R.id.navigation_home:
                     selectedFragment = new HomeFragment();
                     break;
-                case R.id.navigation_busca:
-                    selectedFragment = new SearchFragment();
-                    break;
+//                case R.id.navigation_busca:
+//                    selectedFragment = new SearchFragment();
+//                    break;
 
                 case R.id.navigation_chat:
                     selectedFragment = new ChatFragment();
