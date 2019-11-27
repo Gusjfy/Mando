@@ -33,7 +33,16 @@ public class Travel implements Comparable<Travel> {
     }
 
     private boolean visibility;
-    private int id;
+    private String id;
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
     private String id_entregador;
     private String id_remetente = "";
 

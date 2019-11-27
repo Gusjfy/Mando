@@ -73,6 +73,8 @@ public class DatabaseHelper {
 
     public void addTravel(Travel travel, final DataStatus dataStatus){
         String key = mReferenceTravels.push().getKey();
+        travel.setId(key);
+
         mReferenceTravels.child(key).setValue(travel).addOnSuccessListener(new OnSuccessListener<Void>() {
             @Override
             public void onSuccess(Void aVoid) {
