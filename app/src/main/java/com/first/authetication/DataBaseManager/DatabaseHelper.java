@@ -71,6 +71,33 @@ public class DatabaseHelper {
         });
     }
 
+    public void listOfMyTravels(final DataStatus dataStatus){
+        mReferenceTravels.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                travels.clear();
+                List<String> keys = new ArrayList<>();
+                for (DataSnapshot keyNode: dataSnapshot.getChildren()) {
+                    Travel travel = keyNode.getValue(Travel.class);
+                    if (travel.getId_entregador().equals(FirebaseAuth.getInstance().getCurrentUser().getUid())){
+                        travels.add(travel);
+                        order.add(count++);
+                        keys.add(keyNode.getKey());
+                    }
+
+
+                }
+
+                dataStatus.DataIsLoaded(travels, ordenaPorData(travels));
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+    }
+
     public void addTravel(Travel travel, final DataStatus dataStatus){
         String key = mReferenceTravels.push().getKey();
         travel.setId(key);

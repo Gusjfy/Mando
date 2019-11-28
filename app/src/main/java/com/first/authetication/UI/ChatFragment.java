@@ -1,7 +1,6 @@
 package com.first.authetication.UI;
 
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -45,7 +44,6 @@ public class ChatFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
         View view = inflater.inflate(R.layout.fragment_chat, container, false);
-        ;
 
         recyclerView = view.findViewById(R.id.recycler_view);
         recyclerView.setHasFixedSize(true);
@@ -101,8 +99,8 @@ public class ChatFragment extends Fragment {
                         if (user.getId().equals(id)) {
                             if (mUsers.size() != 0) {
                                 for (User user1 : mUsers) {
-                                    if (!user.getId().equals(user1.getId())){
-                                        if(mUsers.contains(user)){
+                                    if (!user.getId().equals(user1.getId())) {
+                                        if (mUsers.contains(user)) {
                                             break;
                                         }
                                         mUsers.add(user);
